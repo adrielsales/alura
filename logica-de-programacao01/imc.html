@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+
+<script>
+	
+var pulalinha = function(){
+	document.write("<br>");
+}
+
+var mostra = function(frase){
+	document.write(frase);
+	pulalinha();
+	pulalinha();
+}
+
+var calcaulaIMC = function(altura, peso){
+	var imc = peso / (altura * altura);
+	return imc;
+}
+
+// var meuIMC = calcaulaIMC(1.78, 79);
+// mostra("O meu IMC é: " + meuIMC);
+
+// var eliIMC = calcaulaIMC(1.56, 59);
+// mostra("O IMC de Eli é: " + eliIMC);
+
+var nome = prompt("Diga seu nome!");
+var peso = prompt("Informe o seu peso:");
+var altura = prompt("Informe a sua altura:");
+
+var meuIMC = calcaulaIMC(altura, peso);
+
+mostra(nome + ", seu IMC é: " + meuIMC);
+
+if (meuIMC < 18.5) {
+	mostra("Seu meuIMC indica que você está ABAIXO do peso.");
+}
+
+if (meuIMC > 35) {
+	mostra("Seu IMC indica que você está ACIMA do peso.");
+}
+
+if (meuIMC > 18.5 && meuIMC < 35) {
+	mostra("OK! Seu IMC está entre os dois limites.");
+}
+
+
+mostra("Você está distante da obesidade severa em " + (35 - Math.round(calcaulaIMC(altura, peso))));
+
+
+</script>

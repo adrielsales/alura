@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+
+<script>
+	
+var pulalinha = function(){
+	document.write("<br>");
+}
+
+var mostra = function(frase){
+	document.write(frase);
+	pulalinha();
+	pulalinha();
+}
+
+var nomeUsuario = prompt("Diga seu nome!");
+mostra("Olá " + nomeUsuario);
+
+var idade = prompt("Quantos anos você tem?");
+mostra("Você tem " + idade + " anos");
+
+var dias = idade * 365;
+mostra("Você já viveu " + dias + " dias de vida!");
+
+var batimentos = dias * 24 * 60 * 80;
+mostra("Seu coralção já bateu " + batimentos + " vezes. Haja coração!");
+
+</script>

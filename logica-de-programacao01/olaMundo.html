@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+Meu Primeiro Teste!
+<h3>Meu primeiro programa!</h3>
+
+<script>
+	var pulalinha = function(){
+		document.write("<br>");
+	}
+
+	var mostra = function(frase){
+		document.write(frase);
+		pulalinha();
+	}
+
+	mostra("Usando funções para melhorar o código")
+
+	// var anoAtual = 2016;
+	// document.write("Adriel Sales tem " + (anoAtual - 1979));
+	// pulalinha();
+	// document.write("Eli Sales tem " + (anoAtual - 1978));
+	// pulalinha();
+	// document.write("Maria Luiza tem " + (anoAtual - 2015));
+	// pulalinha();
+	// document.write("Gabriel tem " + (anoAtual - 2004));
+	// pulalinha();
+	
+	var anoAtual = 2016;
+	mostra("Adriel Sales tem " + (anoAtual - 1979));
+	mostra("Eli Sales tem " + (anoAtual - 1978));
+	mostra("Maria Luiza tem " + (anoAtual - 2015));
+	mostra("Gabriel tem " + (anoAtual - 2004));
+
+	var adriel = anoAtual - 1979;
+	var eli = anoAtual - 1978;
+	var maria = anoAtual - 2015;
+	var gabriel = anoAtual - 2003;
+
+	var total = adriel + eli + maria + gabriel;
+	var media = total / 4;
+	mostra("A soma total é " + total);
+	mostra("A média é " + Math.round(media));
+
+	console.log("Mensagem apenas para o log!!");
+
+</script>
+
+<body>
+</html>
