@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+
+<input type="text" id="numero" />
+
+<input type="submit" value="Informe seu número" id="numeroDoUsuario" />
+
+<script>
+
+var numerosSorteados = [];
+
+var gerarNumeros = function(){
+	for(var i = 1; i <= 6; i++){
+		numeroAleatorio = Math.round(Math.random() * 60);
+		numerosSorteados.push(numeroAleatorio);
+	}
+}
+
+gerarNumeros();
+
+console.log(numerosSorteados);
+
+/*-------------------*/
+
+var numerosUsuario = [];
+	
+
+var botaoClicado = function(){
+
+	var numero = document.getElementById("numero").value;
+
+	for(var i = 0; i < numerosUsuario.length; i++){
+		if(numerosUsuario[i] == numero){
+			alert("Número já sugerido!!");
+			return;
+		}
+	}
+
+	numerosUsuario.push(numero);
+
+	var tamanho = numerosUsuario.length;
+
+	console.log(numerosUsuario + " - " + tamanho);
+
+	if(tamanho == 6){
+
+		var acertos = [];
+
+		for(var i = 0; i < numerosSorteados.length; i++){
+			for(var j = 0; j < numerosUsuario.length; j++){
+				if(numerosSorteados[i] == numerosUsuario[j]){
+					acertos.push(numerosSorteados[i]);
+				}
+			}
+		}
+
+		alert("Você acertou " + acertos.length + " números!");		
+		
+	}	
+	
+}
+
+var botaoAdivinhar = document.getElementById("numeroDoUsuario");
+botaoAdivinhar.onclick = botaoClicado;
+
+</script>

@@ -20,15 +20,29 @@ var maiorOuMenor = function(numeroPensado, chute){
 	}
 }
 
-var numeroPensado = Math.round(Math.random() * 3);
-var chute = prompt("Já pensei. Qual você acha que é?");
 
-if (chute == numeroPensado) {
-	mostra('Uau! Você acertou, pois eu pensei no ' + numeroPensado);
-} else {
-	mostra('Ha, ha, ha, você errou!! Eu pensei no ' + numeroPensado);
-	maiorOuMenor(numeroPensado, chute);
+
+
+var numeroDaTentativa = 1;
+
+while(numeroDaTentativa <= 5){
+
+	var numeroPensado = Math.round(Math.random() * 5);
+
+	var chute = prompt("Já pensei. Qual você acha que é?");
+
+	if (chute == numeroPensado) {
+		mostra('Uau! Você acertou, pois eu pensei no ' + numeroPensado);
+		break;
+	} else {
+		mostra('Ha, ha, ha, você errou!! Eu pensei no ' + numeroPensado);
+		maiorOuMenor(numeroPensado, chute);
+	}
+
+	numeroDaTentativa++;
 }
+
+
 
 
 </script>

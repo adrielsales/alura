@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+
+<input type="text" id="numero" />
+
+<input type="submit" value="Compare com o meu segredo" id="adivinhar" />
+
+<script>
+
+var numerosSorteados = [];
+
+var numerosSorteador = function(){
+	for(var i = 1; i <= 6; i++){
+		numerosSorteados.push(Math.random() * 60);
+	}
+}
+
+console.log(numerosSorteados);
+
+var segredos = [16, 34, 37, 42, 50, 58];
+	
+var caixaDoNumero = document.getElementById("numero");
+
+var botaoClicado = function(){
+
+	var achei = false;
+
+	for (var i = 0; i < segredos.length; i++) {
+		if(segredos[i] == caixaDoNumero.value){
+			achei = true;
+			console.log(caixaDoNumero.value);
+			break;
+		}
+	}
+
+	if (achei == true) {
+		alert("Parabéns! Você acertou o número secreto.");
+	} else {
+		alert("Infelizmente você errou.");
+	}
+	
+}
+
+var botaoAdivinhar = document.getElementById("adivinhar");
+botaoAdivinhar.onclick = botaoClicado;
+
+</script>

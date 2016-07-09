@@ -1,0 +1,36 @@
+<canvas id="tela" width="600" height="600"></canvas>
+
+<script>
+	
+var tela = document.getElementById("tela");
+var pincel = tela.getContext("2d");
+
+
+/*Bandeira da Colômbia*/
+pincel.fillStyle = "yellow";
+//x1,y1,x2,y2
+pincel.fillRect(0,0,400,150);
+
+pincel.fillStyle = "blue";
+//x1,y1,x2,y2
+pincel.fillRect(0,150,400,75);
+
+pincel.fillStyle = "red";
+//x1,y1,x2,y2
+pincel.fillRect(0,225,400,75);
+
+
+/*Bandeira de Madagascar*/
+pincel.fillStyle = "white";
+//x1,y1,x2,y2
+pincel.fillRect(0,350,150,400);
+
+pincel.fillStyle = "red";
+//x1,y1,x2,y2
+pincel.fillRect(150,350,250,125);
+
+pincel.fillStyle = "green";
+//x1,y1,x2,y2
+pincel.fillRect(150,475,250,125);
+
+</script>

@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+
+<input type="text" id="numero" />
+
+<input type="submit" value="Adicione o verifique no Bingo" id="verificar" />
+
+<script>
+
+var sorteados = [];
+	
+var adicionaSorteado = function(){
+
+	var numero = document.getElementById("numero").value;
+
+	for(var i = 0; i < sorteados.length; i++){
+		if(sorteados[i] == numero){
+			alert("Número já sorteado!!");
+			return;
+		}
+	}
+
+	sorteados.push(numero);
+	console.log(sorteados);
+
+}
+
+var botao = document.getElementById("verificar");
+botao.onclick = adicionaSorteado;
+
+</script>
