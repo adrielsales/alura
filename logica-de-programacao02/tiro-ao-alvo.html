@@ -1,0 +1,55 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<input type="hidden" id="numero" />
+<input type="submit" value="Sair do Jogo" id="sair" />
+
+<script>
+    
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var circulo = function(x,y,raio,cor){
+    c.fillStyle = cor;
+    c.beginPath();
+    c.arc(x,y,raio,0, 2 * Math.PI);
+    c.fill();
+}
+
+var desenhaAlvo = function(x,y){
+    var raio = 50;
+    circulo(x,y,raio,"red");
+    circulo(x,y,raio-10,"white");
+    circulo(x,y,raio-20,"red");
+    circulo(x,y,raio-30,"white");
+}
+
+var limpaTela = function(){
+    c.clearRect(0,0,600,400);
+}
+
+/*y será um número entre 0 e 400*/
+var y = Math.round(Math.random() * 400);
+var x = 1;
+
+var movimentaAlvo = function(){
+    while(x < 600){
+        limpaTela();
+        desenhaAlvo(x,y);
+        x = x + 1;        
+    }
+}
+
+var sair = false;
+
+setInterval(movimentaAlvo, 30);
+
+var sairDoJogo = function(){
+    sair = true;
+    alert("O valor de Sair é :" + sair);
+}
+
+var botao = document.getElementById("sair");
+botao.onclick = sairDoJogo;
+
+</script>
+

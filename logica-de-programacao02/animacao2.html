@@ -1,0 +1,37 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+    
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var circulo = function(x,y,raio){
+    c.strokeStyle = "yellow";
+    c.beginPath();
+    c.arc(x,y,raio,0, 2 * Math.PI);
+    c.stroke();
+}
+
+var limpaTela = function(){
+    c.clearRect(0,0,600,400);
+}
+
+var imagem = new Image();
+imagem.src = "//lh3.googleusercontent.com/-wmwI0U-EN7E/AAAAAAAAAAI/AAAAAAAAArI/1SrqUnB_3Xg/s24-c-k-no/photo.jpg";
+
+var desenhaImagem = function(x, y) {
+    c.drawImage(imagem, x, y)
+};
+
+var x = 1;
+
+var desenha = function(){
+    limpaTela();
+    circulo(x, 200, x/4);
+    desenhaImagem(x, 200);
+    x = x + 1;
+}
+
+setInterval(desenha, 30);
+
+</script>
