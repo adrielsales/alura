@@ -9,6 +9,7 @@ include("banco-produto.php");
 
 
 $preco = $_POST['preco'];
+$id = $_POST['id'];
 $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $categoria_id = $_POST['categoria_id'];
@@ -19,12 +20,12 @@ if (array_key_exists("usado", $_POST)) {
 	$usado = "false";
 }
 
-if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)) { ?>
-	<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> adicionado com sucesso!</p>
+if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) { ?>
+	<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> alterado com sucesso!</p>
 <?php } else { 
 	$msn = mysqli_error($conexao);
 	?>
-	<p class="text-danger">Produto <?= $nome ?>, <?= $preco ?> não foi adicionado: <?= $msn ?></p>
+	<p class="text-danger">Produto <?= $nome ?>, <?= $preco ?> não foi alterado: <?= $msn ?></p>
 <?php 
 }
 
